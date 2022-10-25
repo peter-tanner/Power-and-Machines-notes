@@ -6,7 +6,7 @@
 | Output power       | Mechanical output power of the machine, excludes losses                                                          | $P_\text{out}$, $P_\text{load}$                                                                                |
 | Converted power    | Total electrical power converted to mechanical power, includes useful power and mechanical losses inside machine | $P_\text{conv}$, $P_\text{converted}$, $P_\text{mech}$, $P_\text{developed}$, $\tau_\text{mech}\times\omega_m$ |
 | Airgap power       | Power transmitted over airgap.                                                                                   | $P_\text{AG}$, $\tau_\text{mech}\times\omega_s$                                                                |
-| Mechanical loss    | Power lost to friction and windage                                                                               | $P_\text{mechanical loss}$, $P_\text{F\&W}$, $P_\text{friction and windage}$                                   |
+| Mechanical loss    | Power lost to friction and windage                                                                               | $P_\text{mechanical loss}$, $P_\text{F\\\&W}$, $P_\text{friction and windage}$                                 |
 | Core loss          | Power lost in machine magnetic material due to hysteresis loss and eddy currents                                 | $P_\text{core}$                                                                                                |
 | Rotor copper loss  | Due to resistance of rotor windings                                                                              | $P_r$, $P_\text{RCL}$                                                                                          |
 | Stator copper loss | Due to resistance of stator windings                                                                             | $P_s$, $P_\text{SCL}$                                                                                          |
@@ -16,9 +16,9 @@
 
 $$
 \begin{align}
-P_\text{in}&=P_\text{SCL}+P_\text{RCL}+P_\text{core}+P_\text{F\&W}+P_\text{misc}+P_\text{out}\\
-P_\text{AG}&=P_\text{RCL}+P_\text{F\&W}+P_\text{misc}+P_\text{out}\\
-P_\text{mech}&=P_\text{F\&W}+P_\text{misc}+P_\text{out}
+P_\text{in}&=P_\text{SCL}+P_\text{RCL}+P_\text{core}+P_\text{F\\\&W}+P_\text{misc}+P_\text{out}\\
+P_\text{AG}&=P_\text{RCL}+P_\text{F\\\&W}+P_\text{misc}+P_\text{out}\\
+P_\text{mech}&=P_\text{F\\\&W}+P_\text{misc}+P_\text{out}
 \end{align}
 $$
 
@@ -32,7 +32,7 @@ $$
 
 Using assumptions, remove rotor part of circuit and only consider stator and magnetizing path.
 
-![](2022-10-24-20-04-52.png)
+![](2022-10-25-11-45-26.png)
 
 ## Blocked rotor test
 
@@ -43,6 +43,8 @@ Using assumptions, remove rotor part of circuit and only consider stator and mag
 |                         | $X_r\approx f_0/f_{BL}\times X_r'$ | $X_r'\approx X_{BL}/2$                                                          |
 |                         | $X_r'\approx X_{BL}/2$             | $X_s\approx X_r'$                                                               |
 |                         | $X_s\approx X_r'$                  |
+
+![](2022-10-25-11-46-04.png)
 
 ## Equivalent model
 
