@@ -2,6 +2,17 @@
 
 I draw them with a mouse
 
+### Etc
+
+#### FIRST-PASS CHECKS
+
+- Double check all are in the correct phase! Multiplications and divisions by $\sqrt{3}$ or $3$ where necessary must be checked! Try annotating everything that does not have an associated phase.
+- Check conjugate in current. $\bar{S}=\bar{V}\bar{I}^*$
+
+#### Y-$\Delta$ transformation (Balanced case)
+
+$Z_\Delta=3Z_Y$
+
 ### Types of power factors (From `ENSC2003`)
 
 Where $\bar{S}=|\bar{S}|\angle\varphi$:
@@ -17,7 +28,7 @@ $$ \varphi = \arctan\left(\frac{Q}{P}\right) = \theta_v-\theta_i$$
 | PF [Load]   | $[0,1)$        | $[0,1)$       | $1$          |
 | PF [Source] | $[0,-1)$       | $[0,-1)$      | $-1$         |
 
-## Power types in motor
+## Power types in induction motor
 
 | Type               | Description                                                                                                      | Equivalent terms                                                                                               |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -142,3 +153,50 @@ Ignore magnetizing path
 #### Diagram
 
 ![](2022-10-26-21-47-49.png)
+
+## Synchronous machine
+
+### Etc
+
+$$E_A=V_{1\phi}-I_A(R_A+j X_s)$$
+$$I_A=\text{CONJUGATE}\left(\frac{|S_{3\phi}|\angle\arccos(x)}{3V_{1\phi}}\right), \begin{cases}x=+\text{PF} && \text{lagging} \\ x=-\text{PF} && \text{leading}\end{cases}$$
+
+### Voltage regulation
+
+$$\text{VR}=\frac{|V_\text{NL}|-|V_\text{FL}|}{|V_\text{FL}|}=\frac{|E_A|-|V_{1\phi,\text{rated}}|}{|V_{1\phi,\text{rated}}|}$$
+
+- $V_\text{FL}$ is the full-load voltage which is the full-load/maximum rated voltage at the output terminal.
+- Calculate $E_A$ at full load by calculating the current as shown above.
+- $V_\text{NL}$ is the no-load voltage, which in the no-load case will be $E_A$.
+
+| No-load                      | Full-load                    |
+| ---------------------------- | ---------------------------- |
+| ![](2022-10-27-20-15-13.png) | ![](2022-10-27-20-19-47.png) |
+
+| Power factor | Voltage regulation |
+| ------------ | ------------------ |
+| Lagging      | Positive           |
+| Unity        | Near 0             |
+| Leading      | Negative           |
+
+### Open and short circuit test
+
+#### **Note** - double-check if the axis refers to per-phase or line voltage/current.
+
+| Open-circuit test            | Short-circuit test           |
+| ---------------------------- | ---------------------------- |
+| ![](2022-10-27-15-31-49.png) | ![](2022-10-27-15-32-07.png) |
+
+### Power flow
+
+$P_\text{out}$ is the rated power
+$$P_\text{out}=S_\text{rated}\times \text{PF}$$
+
+$$
+\begin{align}
+P_\text{in}&=P_\text{copper}+P_\text{core}+P_\text{F\\\&W}+P_\text{misc}+P_\text{out}\\
+P_\text{mech}&=P_\text{F\\\&W}+P_\text{misc}+P_\text{out}
+\end{align}
+$$
+
+---
