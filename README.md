@@ -8,6 +8,7 @@ I draw them with a mouse
 
 - Double check all are in the correct phase! Multiplications and divisions by $\sqrt{3}$ or $3$ where necessary must be checked! Try annotating everything that does not have an associated phase.
 - Check conjugate in current. $\bar{S}=\bar{V}\bar{I}^*$
+- Check transformer parameters are referred to the proper side
 
 #### Y-$\Delta$ transformation (Balanced case)
 
@@ -200,3 +201,87 @@ P_\text{mech}&=P_\text{F\\\&W}+P_\text{misc}+P_\text{out}
 $$
 
 ---
+
+### Magnetic circuit analogy
+
+| Magnetic circuit                    | name                         |     | Electrical circuit       | name                    |
+| ----------------------------------- | ---------------------------- | --- | ------------------------ | ----------------------- |
+| $$\mathcal F$$                      | Magnetomotive force [A-turn] |     | $$\mathcal E$$           | Electromotive force [V] |
+| $$\mathcal R$$                      | Reluctance [1/H]             |     | $$R$$                    | Resistance [$\Omega$]   |
+| $$\Phi$$                            | Magnetic flux [Wb]           |     | $$I$$                    | Current [A]             |
+| $$\mathcal P=\frac{1}{\mathcal R}$$ | Permeance [H]                |     | $$G=\frac{1}{R}$$        | Conductivity [$\mho$]   |
+| $$\mathcal F=\Phi\mathcal R$$       | Hopkinson's law              |     | $$V=IR$$                 | Ohm's law               |
+| $$\mathcal R=\frac{l}{\mu A}$$      |                              |     | $$R=\frac{l}{\sigma A}$$ |
+
+---
+
+### Transformers
+
+$$Z_P=Z_S\left(\frac{N_P}{N_S}\right)^2=Z_S n^2$$
+
+#### Maximum power.
+
+If load is resistive ($jX_\text{load}=0$) then for maximum power transfer:
+
+$$R_\text{load}=|{R_\text{src}}^2+j{X_\text{src}}^2|$$
+
+#### Parameter identification
+
+![](2022-10-28-15-52-14.png)
+
+| Open-circuit test            | Short-circuit test           |
+| ---------------------------- | ---------------------------- |
+| ![](2022-10-28-15-53-29.png) | ![](2022-10-28-15-52-58.png) |
+
+#### Voltage regulation
+
+$$\text{VR}=\frac{|V_\text{NL,P}|-|V_\text{rated,P}|}{|V_\text{rated,P}|}=\frac{|V_\text{in}|-|V_\text{rated,P}|}{|V_\text{rated,P}|}$$
+
+Ignore shunt resistance. Refer from primary side. Use KVL to determine $V_\text{in}$.
+
+Voltage regulation is typically small.
+
+$$|V_\text{in}|=|V_\text{rated,P}+I_\text{L,P}\cdot\bar Z|$$
+
+![](2022-10-28-16-30-51.png)
+
+### DC machine
+
+| Separately excited machine               | Shunt excited                                                     | Series excited                                                                    |
+| ---------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| ![](2022-10-28-18-21-53.png)             | ![](2022-10-28-18-22-17.png)                                      | ![](2022-10-28-18-28-51.png)                                                      |
+|                                          | Similar torque-speed characteristic to separately-excited machine | High torque per ampere. Used in high-torque applications                          |
+| Requires two independent voltage sources |                                                                   | Do not run unloaded - infinite speed at 0 torque as $\omega\propto 1/\sqrt{\tau}$ |
+| Motor control using $R_f$                | Motor control using $R_F$                                         | Motor control using $V_T$.                                                        |
+
+#### Starting DC motors
+
+$R_A$ might need to be adjusted so it is high initially in large DC motors, as the starting current is high since there is no back-emf created by $E_A$.
+
+#### Magnetizating curve
+
+When a question specifies the field current or $R_\text{adj}$, refer to magnetization curve. Magnetizating curve is valid at a specific speed $n_{m1}$, and the curve is used to find $E_{A1}$. Using the load condition to find the armature current $I_A=\tau_\text{ind}/(K\varPhi)$, $V_A$ can be used to find a second induced EMF $E_{A2}$. Using $E_{A2}$ find the speed $n_{m2}$ by scaling $n_{m1}$ by $E_{A2}/E_{A1}$.
+
+#### Idk
+
+$$P_\text{mech}=E_AI_A$$
+
+No-load separately excited machine. Assuming no mechanical losses.
+
+$$E_A=V_A\text{ (No load)}$$
+$$I_A=0\text{ (No load)}$$
+
+Armature reaction causes increase in speed and causes instability as the core saturates near the poles. Can be reduced with compensating winding which is in series with the armature coil.
+
+$$K\Phi\omega=E_A$$
+$$K\Phi I_A=\tau$$
+
+For shunt motor
+
+$$K\Phi=\frac{V_T-R_AI_A}{\omega}$$
+$$\tau=K\Phi I_A=\frac{V_T-R_AI_A}{\omega}I_A$$
+
+Assume no saturation, speed locked(?):
+
+This doesn't seem right. We are meant to use the machine constant and the proportionality of current to magnetic flux.
+$$\frac{E_{A2}}{E_{A1}}=\frac{I_{f2}}{I_{f1}}$$
