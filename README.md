@@ -1,3 +1,8 @@
+```
+!\[\]\(([^\)]*)\)
+<center><img src="$1" width=400px></center>
+```
+
 > Why are the drawings bad?
 
 I draw them with a mouse
@@ -43,7 +48,7 @@ $$ \varphi = \arctan\left(\frac{Q}{P}\right) = \theta_v-\theta_i$$
 | Stator copper loss | Due to resistance of stator windings                                                                             | $P_s$, $P_\text{SCL}$                                                                                          |
 | Miscellaneous loss | Add 1% to losses to account for other unmeasured losses                                                          | $P_\text{misc}$, $P_\text{stray}$                                                                              |
 
-![](2022-10-25-11-33-40.png)
+<center><img src="2022-10-25-11-33-40.png" width=400px></center>
 
 $$
 \begin{align}
@@ -72,7 +77,7 @@ Note - assume loss is 0 if not mentioned!
 
 ### Diagram
 
-![](2022-10-26-22-06-19.png)
+<center><img src="2022-10-26-22-06-19.png" width=400px></center>
 
 ### Equivalent model
 
@@ -87,19 +92,21 @@ Note - assume loss is 0 if not mentioned!
 
 ### Diagram
 
-![](2022-10-26-21-53-13.png)
+<center><img src="2022-10-26-21-53-13.png" width=400px></center>
 
 ### DC test
 
 #### $\Delta$ machine
 
 $$R_s=\frac{3}{2}\cdot\frac{V_{\text{DC},3\phi}}{I_{\text{DC},3\phi}}$$
-![](2022-10-26-22-43-25.png)
+
+<center><img src="2022-10-26-22-43-25.png" width=400px></center>
 
 #### Y machine
 
 $$R_s=\frac{1}{2}\cdot\frac{V_{\text{DC},3\phi}}{I_{\text{DC},3\phi}}$$
-![](2022-10-26-22-48-09.png)
+
+<center><img src="2022-10-26-22-48-09.png" width=400px></center>
 
 ### No-load test
 
@@ -114,7 +121,7 @@ $$R_s=\frac{1}{2}\cdot\frac{V_{\text{DC},3\phi}}{I_{\text{DC},3\phi}}$$
 
 Using assumptions, remove rotor part of circuit and only consider stator and magnetizing path.
 
-![](2022-10-25-11-45-26.png)
+<center><img src="2022-10-25-11-45-26.png" width=400px></center>
 
 ### Blocked rotor test
 
@@ -133,7 +140,7 @@ Using assumptions, remove rotor part of circuit and only consider stator and mag
 
 Ignore magnetizing path
 
-![](2022-10-25-11-46-04.png)
+<center><img src="2022-10-25-11-46-04.png" width=400px></center>
 
 ---
 
@@ -141,19 +148,19 @@ Ignore magnetizing path
 
 ### Diagram
 
-![](2022-10-26-21-47-29.png)
+<center><img src="2022-10-26-21-47-29.png" width=400px></center>
 
 ### Blocked-rotor
 
 #### Diagram
 
-![](2022-10-26-21-48-00.png)
+<center><img src="2022-10-26-21-48-00.png" width=400px></center>
 
 ### No-load
 
 #### Diagram
 
-![](2022-10-26-21-47-49.png)
+<center><img src="2022-10-26-21-47-49.png" width=400px></center>
 
 ## Synchronous machine
 
@@ -170,9 +177,9 @@ $$\text{VR}=\frac{|V_\text{NL}|-|V_\text{FL}|}{|V_\text{FL}|}=\frac{|E_A|-|V_{1\
 - Calculate $E_A$ at full load by calculating the current as shown above.
 - $V_\text{NL}$ is the no-load voltage, which in the no-load case will be $E_A$.
 
-| No-load                      | Full-load                    |
-| ---------------------------- | ---------------------------- |
-| ![](2022-10-27-20-15-13.png) | ![](2022-10-27-20-19-47.png) |
+| No-load                                                          | Full-load                                                        |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| <center><img src="2022-10-27-20-15-13.png" width=300px></center> | <center><img src="2022-10-27-20-19-47.png" width=300px></center> |
 
 | Power factor | Voltage regulation |
 | ------------ | ------------------ |
@@ -184,9 +191,9 @@ $$\text{VR}=\frac{|V_\text{NL}|-|V_\text{FL}|}{|V_\text{FL}|}=\frac{|E_A|-|V_{1\
 
 #### **Note** - double-check if the axis refers to per-phase or line voltage/current.
 
-| Open-circuit test            | Short-circuit test           |
-| ---------------------------- | ---------------------------- |
-| ![](2022-10-27-15-31-49.png) | ![](2022-10-27-15-32-07.png) |
+| Open-circuit test                                                 | Short-circuit test                                               |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------- |
+| <center><img src="2022-10-27-15-31-49.png" width=300px ></center> | <center><img src="2022-10-27-15-32-07.png" width=300px></center> |
 
 ### Power flow
 
@@ -227,11 +234,11 @@ $$R_\text{load}=|{R_\text{src}}^2+j{X_\text{src}}^2|$$
 
 #### Parameter identification
 
-![](2022-10-28-15-52-14.png)
+<center><img src="2022-10-28-15-52-14.png" width=400px></center>
 
-| Open-circuit test            | Short-circuit test           |
-| ---------------------------- | ---------------------------- |
-| ![](2022-10-28-15-53-29.png) | ![](2022-10-28-15-52-58.png) |
+| Open-circuit test                                                | Short-circuit test                                               |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| <center><img src="2022-10-28-15-53-29.png" width=300px></center> | <center><img src="2022-10-28-15-52-58.png" width=300px></center> |
 
 #### Voltage regulation
 
@@ -243,16 +250,16 @@ Voltage regulation is typically small.
 
 $$|V_\text{in}|=|V_\text{rated,P}+I_\text{L,P}\cdot\bar Z|$$
 
-![](2022-10-28-16-30-51.png)
+<center><img src="2022-10-28-16-30-51.png" width=400px></center>
 
 ### DC machine
 
-| Separately excited machine               | Shunt excited                                                     | Series excited                                                                    |
-| ---------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| ![](2022-10-28-18-21-53.png)             | ![](2022-10-28-18-22-17.png)                                      | ![](2022-10-28-18-28-51.png)                                                      |
-|                                          | Similar torque-speed characteristic to separately-excited machine | High torque per ampere. Used in high-torque applications                          |
-| Requires two independent voltage sources |                                                                   | Do not run unloaded - infinite speed at 0 torque as $\omega\propto 1/\sqrt{\tau}$ |
-| Motor control using $R_f$                | Motor control using $R_F$                                         | Motor control using $V_T$.                                                        |
+| Separately excited machine                           | Shunt excited                                                     | Series excited                                                                    |
+| ---------------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| <center><img src="2022-10-28-18-21-53.png"></center> | <center><img src="2022-10-28-18-22-17.png"></center>              | <center><img src="2022-10-28-18-28-51.png"></center>                              |
+|                                                      | Similar torque-speed characteristic to separately-excited machine | High torque per ampere. Used in high-torque applications                          |
+| Requires two independent voltage sources             |                                                                   | Do not run unloaded - infinite speed at 0 torque as $\omega\propto 1/\sqrt{\tau}$ |
+| Motor control using $R_f$                            | Motor control using $R_F$                                         | Motor control using $V_T$.                                                        |
 
 #### Starting DC motors
 
