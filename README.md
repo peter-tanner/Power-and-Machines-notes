@@ -1,11 +1,4 @@
-```
-!\[\]\(([^\)]*)\)
-<center><img src="$1" width=400px></center>
-```
-
-> Why are the drawings bad?
-
-I draw them with a mouse
+# ENSC3016 notes
 
 ### Etc
 
@@ -181,11 +174,9 @@ $$\text{VR}=\frac{|V_\text{NL}|-|V_\text{FL}|}{|V_\text{FL}|}=\frac{|E_A|-|V_{1\
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
 | <center><img src="2022-10-27-20-15-13.png" width=300px></center> | <center><img src="2022-10-27-20-19-47.png" width=300px></center> |
 
-| Power factor | Voltage regulation |
-| ------------ | ------------------ |
-| Lagging      | Positive           |
-| Unity        | Near 0             |
-| Leading      | Negative           |
+| PF  | Lagging  | Unity  | Leading  |
+| --- | -------- | ------ | -------- |
+| VR  | Positive | Near 0 | Negative |
 
 ### Open and short circuit test
 
